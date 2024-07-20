@@ -17,6 +17,7 @@ body {
   height: 36px;
   margin-bottom: 20px;
   text-shadow: 5px 0px black;
+  text-shadow: 4px 4px 6px #b2beb5;
 }
 
 /* Style for the create an account text */
@@ -26,6 +27,7 @@ body {
   font-weight: 700;
   height: 28px;
   shadow: 0px 0px 5px 0px #ff0000;
+  text-shadow: 4px 4px 6px #b2beb5;
 }
 
 /* Style for the Sign Up */
@@ -57,6 +59,7 @@ body {
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 8px;
+  text-shadow: 4px 4px 6px #b2beb5;
 }
 
 .form-control {
@@ -67,6 +70,7 @@ body {
   padding: 12px 16px;
   margin-bottom: 20px;
   border-color: #4b5768;
+  box-shadow: 0 4px 4px rgba(100, 100, 100, 0.2);
 }
 
 .password {
@@ -84,6 +88,7 @@ body {
   margin-bottom: 16px;
   font-size: 14px;
   color: #999da3;
+  text-shadow: 4px 4px 6px #b2beb5;
 }
 
 /* Style for form span */
@@ -114,6 +119,8 @@ form span a:hover {
   width: 400px;
   radius: 4%;
   margin-top: 15px;
+  font-size: 14px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* Or sign up with */
@@ -129,6 +136,7 @@ form span a:hover {
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* hr tag */
@@ -147,6 +155,7 @@ hr {
   color: #4b5768;
   font-weight: 400;
   font-size: 14px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* Already Have an account */
@@ -155,9 +164,12 @@ hr {
   font-size: 16px;
   text-align: center;
   margin: 16px;
+  text-shadow: 4px 4px 6px #b2beb5;
+
   a {
     font-weight: 600;
     color: #3f52ff;
+    text-shadow: 2px 2px 4px #b2beb5;
   }
 }
 
