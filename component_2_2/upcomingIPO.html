@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPO Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .color-link {
+            color: #273240;
+            opacity: 70%;
+        }
+        
+        .poppins-light {
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .poppins-regular {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .poppins-medium {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        .circle {
+            border-radius: 100%;
+            background-color: #5A67BA;
+            color: white;
+            padding: 6px;
+            display: inline-block;
+        }
+
+        .color-head {
+            color: #5A67BA;
+        }
+
+        #sidebar {
+            background-color: #F1F2F7;
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+
+        .icon-color {
+            color: #A6ABC8;
+        }
+
+        .icon-current {
+            color: #707FDD;
+        }
+
+        .div-current {
+            color: #707FDD;
+            border-radius: 5px;
+        }
+
+        .color-current {
+            color: #5A6ACF;
+        }
+
+        .head-sub {
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: #082431;
+            opacity: 90%;
+        }
+
+        .left-shift {
+            margin-left: -2.5px;
+        }
+
+        .div-current-opacity {
+            border-radius: 5px;
+            background-color: rgba(112, 127, 221, 0.2);
+        }
+
+        .text-head {
+            font-size: 0.8rem;
+            letter-spacing: 0.8px;
+        }
+
+        .search-bar {
+            background-color: #F6F6FB;
+            border-radius: 8px;
+            border: none;
+            padding: 1px 10px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            background: transparent;
+            width: 38rem;
+            font-size: 0.8rem;
+            padding: 2px 5px;
+            font-family: "Poppins", sans-serif;
+            color: #1F384C;
+            opacity: 80%;
+        }
+
+        .search-bar i {
+            color: #627B87;
+            opacity: 40%;
+        }
+
+        .account-info {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            font-family: "Poppins", sans-serif;
+            padding-left: 320px;
+        }
+
+        .account-info .avatar {
+            width: 33px;
+            height:31px;
+            border-radius: 50%;
+            background-color: #FFE6CC;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: #FFFFFF;
+        }
+
+        .account-info .name {
+            color: #1F384C;
+            font-size: 0.8rem;
+        }
+
+        .account-info .notification {
+            position: relative;
+            color: #B0C3CC;
+        }
+
+        .account-info .notification .badge {
+            position: absolute;
+            top: 3.5px;
+            right: -0.5px;
+            background-color: #FF5D48;
+            color: white;
+            box-shadow: #e8e9eb;
+            border-radius: 100%;
+            width: 7px;
+            height: 6px;
+            padding: 0; /* Remove padding */
+            font-size: 0; /* Remove text */
+        }
+        .icon {
+            height: 8px;
+            width: 12px;
+            margin-top: 3px;
+            opacity: 40%;
+        }
+        .dash {
+            font-size: 1.4rem;       
+            color: #1F384C;
+            font-weight: 500;     
+        }
+        .head-first {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        .first {
+            font-size: 0.8rem;
+            color: #737B8B;
+        }
+        .green {
+            color: #149D52;
+        }
+        .circle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+            height: 350px; /* Adjust height as needed */
+        }
+
+        .circle-s {
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            color: white;
+            text-align: center;
+        }
+
+        .circle1 {
+            width: 80px;
+            height: 80px;
+            background-color: #6463D6;
+            top: 2%;
+            left: 50%;
+            z-index: 3;
+            opacity: 80%;
+        }
+
+        .circle2 {
+            width: 145px;
+            height: 145px;
+            background-color: #F99C30;
+            top: 8%;
+            left: 90%;
+            z-index: 2;
+        }
+
+        .circle3 {
+            width: 100px;
+            height: 100px;
+            background-color: #2FBFDE;
+            top: 29%;
+            left: 14%;
+            z-index: 1;
+        }
+
+        .circle-s .content {
+            font-size: 0.75rem;
+            color: #FFFFFF;
+        }
+
+        .circle1 .span-s {
+            font-size: 1rem;
+        }
+
+        .circle2 .span-s {
+            font-size: 1.8rem;
+        }
+
+        .circle3 .span-s {
+            font-size: 1.4rem;
+        }
+
+        .half-border {
+            position: absolute;
+            border-radius: 100%;
+            border: solid;
+            width: 110%;
+            height: 110%;
+            clip-path: inset(0 0 0 50%); /* Adjust this line */
+        }
+
+        .circle1 .half-border {
+            border-color: #6463D6;
+            top: -5%;
+            left: -5%;
+            border-width: 2px;
+        }
+
+        .circle2 .half-border {
+            border-color: #F99C30;
+            top: -5%;
+            left: -5%;
+            border-width: 4px;
+        }
+
+        .circle3 .half-border {
+            border-color: #2FBFDE;
+            top: -5%;
+            left: -5%;
+            border-width: 3px;
+        }
+
+        .main {
+            gap: 2rem;
+        }
+
+        .logo {
+            width: 3.4rem;
+            height: 3.4rem;
+        }
+        .logo-div {
+            padding-left: 18px;
+        }
+
+        .span-d {
+            margin-top: -18px;
+            font-weight: 500;
+            font-size: 0.7rem;
+        }
+        .second1 {
+            gap: 6rem;
+        }
+
+        .second2 {
+            margin-top: -10px;
+            gap: 6.15rem;
+        }
+
+        .second3 {
+            margin-top: -10px;
+            gap: 7.85rem;
+        }
+
+        .second4 {
+            margin-top: -10px;
+            gap: 4.35rem;
+        }
+
+        .div1 {
+            border-right: 1px solid #C8CBD9;
+            padding-right: 200px;
+            height: 21rem;
+        }
+
+        .div2 {
+            border-right: 1px solid #C8CBD9;
+            padding-right: 100px;
+            height: 21rem;
+        }
+
+        .button {
+            border:1px solid #DDE4F0;
+            background-color: #FBFCFE;
+            border-radius: 6%;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #5A6ACF;
+            height: 40px;
+            width: 110px;
+        }
+
+        .contain {
+            position: relative;
+            display: inline-block;
+        }
+
+        .highlight {
+            position: absolute;
+            top: 15%;  /* Adjust these values to position the div */
+            left: 109%; /* Adjust these values to position the div */
+            transform: translate(-50%, -50%);
+            padding: 12px;
+            background-color: #37375C;
+            border: 2px solid #37375C;
+            border-radius: 5px;
+            color: #FFFFFF;
+            font-size: 11px;
+            text-align: center;
+            width: 130px;
+            gap: 4px;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            bottom: -7px; /* Adjust this value to position the triangle */
+            left: 25%;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #37375C; /* Same as highlight background color */
+            transform: translateX(-50%);
+        }
+
+        .imag {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+        .short {
+            font-size: 0.7rem;
+            font-weight: 200;
+            opacity: 50%;
+            letter-spacing: 1px;
+        }
+
+        .num {
+            font-size: 0.95rem;
+        }
+        .bld {
+            font-weight: 500;
+            opacity: 85%;
+            font-size: 0.72rem;
+            margin-left: -17px;
+        }
+
+        .list1 {
+            display: flex;
+            gap: 10px;
+            font-size: 0.78rem;
+            gap: 4.5rem;
+        }
+
+        .list1 .bld::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            margin-right: 5px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .upcoming::before {
+            background-color: #5A6ACF;
+        }
+
+        .new-listed::before {
+            background-color: #8593ED;
+        }
+
+        .ongoing::before {
+            background-color: #C7CEFF;
+        }
+
+        .ipo-table-container {
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+
+        .ipo-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #F7F6FE;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .ipo-table th, .ipo-table td {
+            padding: 10px 15px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .ipo-table th {
+            background-color: #FFFFFF;
+        }
+
+        .ipo-table tbody tr:nth-child(even) {
+            background-color: #FFFFFF;
+        }
+
+        .btn-update {
+            border: none;
+            color: white;
+            padding: 7px 15px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-weight: 550;
+            font-size: 11px;
+        }
+
+        .btn-update {
+            background-color: #624DE3;
+        }
+
+        .btn-delete, .btn-view {
+            border: none;  
+            background-color: transparent; 
+        }
+
+        .status {
+            padding: 5px 12px;
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 11px;
+            border: 1px solid;
+        }
+
+        .status-ongoing {
+            background-color: rgba(134, 228, 156, 0.2);
+            color: #41BC63;
+            border-color: #41BC63;
+            padding: 0.27rem 1.05rem;
+        }
+
+        .status-comming {
+            background-color: rgba(216, 199, 146, 0.2);
+            color: #BC9241;
+            border-color: #BC9241;
+        }
+
+        .status-newlisted {
+            background-color: rgba(241, 194, 199, 0.2);
+            color: #BC4141;
+            border-color: #BC4141;
+        }
+
+        .btn-delete i, .btn-view i {
+            font-size: 14px;
+        }
+
+        .pagination-1 ul {
+            display: flex;
+            align-items: center;
+        }
+
+        .pagination-1 ul li {
+            list-style: none;
+            margin-right: 5px; /* Set uniform spacing */
+        }
+
+        .pagination-1 ul li:last-child {
+            margin-right: 0; /* Remove margin from last element */
+        }
+
+        .pagination-1 ul li a,
+        .pagination-1 ul li span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: #000;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 650;
+            transition: background-color 0.3s, color 0.3s;
+            height: 28px; /* Set a consistent height */
+            min-width: 25px; /* Set a consistent width */
+        }
+
+        .pagination-1 ul li a.hidden {
+            display: none;
+        }
+
+        .pagination-1 ul li a.expandable {
+            padding: 5px 10px; /* Set padding similar to other elements */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px; /* Set a consistent height */
+            min-width: 40px; /* Set a consistent width */
+        }
+
+        .pagination-1 ul li a:hover {
+            background-color: #ddd;
+        }
+
+        .pagination-1 ul li a.active {
+            border-color: #4200FF;
+            background-color: #fff;
+        }
+
+        .pagination-1 ul li a.disabled {
+            color: #fff;
+            cursor: not-allowed;
+            background-color: #919EAB;
+            width: 26px;
+        }
+
+        .pagination-1 ul li a.disabled i {
+            color: #fff;
+        }
+
+        .pagination-1 ul li a.disabled:hover {
+            background-color: #919EAB;
+        }
+
+        .pagination-1 ul li span {
+            pointer-events: none;
+            height: 40px; 
+            min-width: 40px;
+        }
+
+        .pagination-1 ul li.expandable:hover a {
+            cursor: pointer;
+        }
+        .margin1 {
+            margin-left: -28px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="d-flex">
+        <nav id="sidebar" class="bg-light poppins-regular d-flex flex-column gap-4">
+            <div class="p-3 d-flex align-items-center gap-2 fw-bold flex-row text-head border-bottom px-3">
+                <div class="circle">
+                    <span>BF</span>
+                </div>
+                <span class="mb-0 color-head">Bluestock Fintech</span>
+            </div>
+            <div class="p-1 d-flex flex-column gap-1 px-3">
+                <span class="text-uppercase fw-light head-sub mb-2 px-4">Menu</span>
+                <ul class="list-unstyled text-sm d-flex flex-column align-content-center">
+                    <li>
+                        <div class="">
+                            <a href="./index.html" class="text-decoration-none color-link d-flex gap-2 p-2 px-4 align-items-center">
+                                <i class="fa-solid fa-square-poll-vertical icon-color" aria-hidden="true"></i> 
+                                <span>Dashboard</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="div-current-opacity">
+                            <a href="./upcomingIPO.html" class="text-decoration-none color-link d-flex gap-2 p-2 px-4 align-items-center left-shift">
+                                <i class="fa-solid fa-cart-shopping icon-current" aria-hidden="true"></i>
+                                <span class="color-current">Manage IPO</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="text-decoration-none color-link d-flex gap-2 p-2 px-4 align-items-center">
+                            <i class="fas fa-file-alt icon-color" aria-hidden="true"></i>
+                            <span>IPO Subscription</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-decoration-none color-link d-flex gap-2 p-2 px-4 align-items-center left-shift">
+                            <i class="fa-solid fa-comment-dots icon-color" aria-hidden="true"></i>
+                            <span>IPO Allotment</span>
+                        </a>
+                    </li>
+                </ul>
+                <span class="text-uppercase fw-light head-sub mb-2 px-4">Others</span>
+                <ul class="d-flex flex-column text-sm align-content-center list-unstyled">
+                    <li>
+                        <a href="#" class="text-decoration-none color-link d-flex gap-2 p-2 px-4 align-items-center">
+                            <i class="fa-solid fa-gear icon-color" aria-hidden="true"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-decoration-none color-link d-flex gap-2 p-2 px-4 align-items-center">
+                            <i class="fas fa-toolbox icon-color" aria-hidden="true"></i>
+                            <span>API Manager</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-decoration-none color-link d-flex gap-2 p-2 px-4 align-items-center">
+                            <i class="fa-solid fa-user icon-color" aria-hidden="true"></i>
+                            <span>Accounts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-decoration-none color-link d-flex gap-2 p-2 px-4 align-items-center">
+                            <i class="fas fa-question-circle icon-color" aria-hidden="true"></i>
+                            <span>Help</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="content" class="poppins-regular">
+            <div class="d-flex gap-lg-5 p-3 border-bottom">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                    <i class="fa fa-search"></i>
+                </div>
+                <div class="account-info">
+                    <div class="d-flex gap-3">
+                        <div class="avatar">V</div>
+                        <div class="d-flex gap-lg-5">
+                            <div class="name d-flex gap-1 align-items-center">
+                                <span>Hi, </span>
+                                <span>Vishal</span>
+                            </div>
+                            <div class="icon pb-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+                            </div>                            
+                        </div>
+                    </div>
+                    
+                    <div class="notification">
+                        <i class="fa fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                </div>
+            </div>
+            <div class="p-5 d-flex flex-column gap-4">
+                <div class="dash d-flex justify-content-between">
+                    <span>Upcoming IPO | Dashboard</span>
+                    <button type="button" class="button"><a href="./registerIPO.html" class="button text-decoration-none border-0">Register IPO</a></button>
+                </div>
+                <div class="ipo">
+                    <div class="ipo-table-container">
+                        <table class="ipo-table">
+                            <thead>
+                                <tr>
+                                    <th>Company</th>
+                                    <th>Price Band</th>
+                                    <th>Open</th>
+                                    <th>Close</th>
+                                    <th>ISSUE SIZE</th>
+                                    <th>ISSUE Type</th>
+                                    <th>Listing Date</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                    <th>Delete/View</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Adani Power</td>
+                                    <td>₹ 129 - 136</td>
+                                    <td>2024-06-03</td>
+                                    <td>2024-06-05</td>
+                                    <td>130.15 Cr.</td>
+                                    <td>Book Built</td>
+                                    <td>2024-06-10</td>
+                                    <td><span class="status status-ongoing">Ongoing</span></td>
+                                    <td><button class="btn-update">Update</button></td>
+                                    <td>
+                                        <button class="btn-delete"><img src="./assets/trash-2 2.png" alt=""></button>
+                                        <button class="btn-view"><img src="./assets/eye.png" alt=""></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>VBL LTD</td>
+                                    <td>₹ 129 - 136</td>
+                                    <td>2024-06-03</td>
+                                    <td>2024-06-05</td>
+                                    <td>130.15 Cr.</td>
+                                    <td>Book Built</td>
+                                    <td>2024-06-10</td>
+                                    <td><span class="status status-comming">Comming</span></td>
+                                    <td><button class="btn-update">Update</button></td>
+                                    <td>
+                                        <button class="btn-delete"><img src="./assets/trash-2 2.png" alt=""></button>
+                                        <button class="btn-view"><img src="./assets/eye.png" alt=""></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Tata Motor</td>
+                                    <td>₹ 129 - 136</td>
+                                    <td>2024-06-03</td>
+                                    <td>2024-06-05</td>
+                                    <td>130.15 Cr.</td>
+                                    <td>Book Built</td>
+                                    <td>2024-06-10</td>
+                                    <td><span class="status status-newlisted">New Listed</span></td>
+                                    <td><button class="btn-update">Update</button></td>
+                                    <td>
+                                        <button class="btn-delete"><img src="./assets/trash-2 2.png" alt=""></button>
+                                        <button class="btn-view"><img src="./assets/eye.png" alt=""></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Indus Tower</td>
+                                    <td>₹ 129 - 136</td>
+                                    <td>2024-06-03</td>
+                                    <td>2024-06-05</td>
+                                    <td>130.15 Cr.</td>
+                                    <td>Book Built</td>
+                                    <td>2024-06-10</td>
+                                    <td><span class="status status-newlisted">New Listed</span></td>
+                                    <td><button class="btn-update">Update</button></td>
+                                    <td>
+                                        <button class="btn-delete"><img src="./assets/trash-2 2.png" alt=""></button>
+                                        <button class="btn-view"><img src="./assets/eye.png" alt=""></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>BSE India</td>
+                                    <td>₹ 129 - 136</td>
+                                    <td>2024-06-03</td>
+                                    <td>2024-06-05</td>
+                                    <td>130.15 Cr.</td>
+                                    <td>Book Built</td>
+                                    <td>2024-06-10</td>
+                                    <td><span class="status status-newlisted">New Listed</span></td>
+                                    <td><button class="btn-update">Update</button></td>
+                                    <td>
+                                        <button class="btn-delete"><img src="./assets/trash-2 2.png" alt=""></button>
+                                        <button class="btn-view"><img src="./assets/eye.png" alt=""></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="pagination-1 inter-first">
+                    <ul>
+                        <li><a class="disabled" href="#"><i class="fa-solid fa-chevron-left p-1"></i></a></li>
+                        <li><a class="active" href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li class="expandable"><a href="#">...</a></li>
+                        <li><a class="hidden expandable-content" href="#">3</a></li>
+                        <li><a class="hidden expandable-content" href="#">4</a></li>
+                        <li><a class="hidden expandable-content" href="#">5</a></li>
+                        <li><a class="hidden expandable-content" href="#">6</a></li>
+                        <li><a class="hidden expandable-content" href="#">7</a></li>
+                        <li class=""><a class="hidden" href="#">8</a></li>
+                        <li id="targetElement" class="margin1"><a href="#">9</a></li>
+                        <li><a href="#">10</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i></a></li>
+                      </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const expandableButtons = document.querySelectorAll('.expandable');
+            const targetElement = document.getElementById('targetElement');
+            
+            expandableButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('hidden');
+                    
+                    if (Array.from(document.querySelectorAll('.expandable-content.hidden')).length === expandableButtons.length) {
+                        targetElement.classList.add('margin1');
+                    } else {
+                        targetElement.classList.remove('margin1');
+                    }
+                });
+            });
+        });
+    </script>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+
+</body>
+</html>

@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPO Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .color-link {
+            color: #273240;
+            opacity: 70%;
+        }
+        
+        .poppins-light {
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .poppins-regular {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .poppins-medium {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        .circle {
+            border-radius: 100%;
+            background-color: #5A67BA;
+            color: white;
+            padding: 6px;
+            display: inline-block;
+        }
+
+        .color-head {
+            color: #5A67BA;
+        }
+
+        #sidebar {
+            background-color: #F1F2F7;
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+
+        .icon-color {
+            color: #A6ABC8;
+        }
+
+        .icon-current {
+            color: #707FDD;
+        }
+
+        .div-current {
+            color: #707FDD;
+            border-radius: 5px;
+        }
+
+        .color-current {
+            color: #5A6ACF;
+        }
+
+        .head-sub {
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: #082431;
+            opacity: 90%;
+        }
+
+        .left-shift {
+            margin-left: -2.5px;
+        }
+
+        .div-current-opacity {
+            border-radius: 5px;
+            background-color: rgba(112, 127, 221, 0.2);
+        }
+
+        .text-head {
+            font-size: 0.8rem;
+            letter-spacing: 0.8px;
+        }
+
+        .search-bar {
+            background-color: #F6F6FB;
+            border-radius: 8px;
+            border: none;
+            padding: 1px 10px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            background: transparent;
+            width: 38rem;
+            font-size: 0.8rem;
+            padding: 2px 5px;
+            font-family: "Poppins", sans-serif;
+            color: #1F384C;
+            opacity: 80%;
+        }
+
+        .search-bar i {
+            color: #627B87;
+            opacity: 40%;
+        }
+
+        .account-info {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            font-family: "Poppins", sans-serif;
+            padding-left: 320px;
+        }
+
+        .account-info .avatar {
+            width: 33px;
+            height:31px;
+            border-radius: 50%;
+            background-color: #FFE6CC;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: #FFFFFF;
+        }
+
+        .account-info .name {
+            color: #1F384C;
+            font-size: 0.8rem;
+        }
+
+        .account-info .notification {
+            position: relative;
+            color: #B0C3CC;
+        }
+
+        .account-info .notification .badge {
+            position: absolute;
+            top: 3.5px;
+            right: -0.5px;
+            background-color: #FF5D48;
+            color: white;
+            box-shadow: #e8e9eb;
+            border-radius: 100%;
+            width: 7px;
+            height: 6px;
+            padding: 0; /* Remove padding */
+            font-size: 0; /* Remove text */
+        }
+        .icon {
+            height: 8px;
+            width: 12px;
+            margin-top: 3px;
+            opacity: 40%;
+        }
+        .dash {
+            font-size: 1.4rem;       
+            color: #1F384C;
+            font-weight: 500;     
+        }
+        .head-first {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        .first {
+            font-size: 0.8rem;
+            color: #737B8B;
+        }
+        .green {
+            color: #149D52;
+        }
+        .circle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+            height: 350px; /* Adjust height as needed */
+        }
+
+        .circle-s {
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            color: white;
+            text-align: center;
+        }
+
+        .circle1 {
+            width: 95px;
+            height: 95px;
+            background-color: #6463D6;
+            top: 2%;
+            left: 50%;
+            z-index: 3;
+            opacity: 80%;
+        }
+
+        .circle2 {
+            width: 160px;
+            height: 160px;
+            background-color: #F99C30;
+            top: 10%;
+            left: 95%;
+            z-index: 2;
+        }
+
+        .circle3 {
+            width: 120px;
+            height: 120px;
+            background-color: #2FBFDE;
+            top: 44%;
+            left: 17%;
+            z-index: 1;
+            opacity: 80%;
+        }
+
+        .circle-s .content {
+            font-size: 0.75rem;
+            color: #FFFFFF;
+        }
+
+        .circle1 .span-s {
+            font-size: 1rem;
+        }
+
+        .circle2 .span-s {
+            font-size: 1.8rem;
+        }
+
+        .circle3 .span-s {
+            font-size: 1.4rem;
+        }
+
+        .half-border {
+            position: absolute;
+            border-radius: 110%;
+            border: solid;
+            width: 107%;
+            height: 107%;
+            clip-path: polygon(100% 180%, 100% -10%, 30% 5%, 0% 100%); /* Adjust this line */
+        }
+
+        .circle1 .half-border {
+            border-color: #6463D6;
+            top: -3%;
+            left: -3%;
+            border-width: 1.6px;
+        }
+
+        .circle2 .half-border {
+            border-color: #F99C30;
+            top: -4%;
+            left: -4%;
+            border-width: 2.3px;
+        }
+
+        .circle3 .half-border {
+            border-color: #2FBFDE;
+            top: -4%;
+            left: -4%;
+            border-width: 2px;
+        }
+
+        .main {
+            gap: 2rem;
+        }
+
+        .logo {
+            width: 3.4rem;
+            height: 3.4rem;
+        }
+        .logo-div {
+            padding-left: 18px;
+        }
+
+        .span-d {
+            margin-top: -18px;
+            font-weight: 500;
+            font-size: 0.7rem;
+        }
+        .second1 {
+            gap: 6rem;
+        }
+
+        .second2 {
+            margin-top: -10px;
+            gap: 6.15rem;
+        }
+
+        .second3 {
+            margin-top: -10px;
+            gap: 7.85rem;
+        }
+
+        .second4 {
+            margin-top: -10px;
+            gap: 4.35rem;
+        }
+
+        .div1 {
+            border-right: 1px solid #C8CBD9;
+            padding-right: 200px;
+            height: 21rem;
+        }
+
+        .div2 {
+            border-right: 1px solid #C8CBD9;
+            padding-right: 100px;
+            height: 21rem;
+        }
+
+        .button {
+            border:1px solid #C8CBD9;
+            background-color: #FBFCFE;
+            border-radius: 6%;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #5A6ACF;
+            height: 40px;
+            width: 110px;
+        }
+
+        .contain {
+            position: relative;
+            display: inline-block;
+        }
+
+        .highlight {
+            position: absolute;
+            top: 15%;  /* Adjust these values to position the div */
+            left: 109%; /* Adjust these values to position the div */
+            transform: translate(-50%, -50%);
+            padding: 12px;
+            background-color: #37375C;
+            border: 2px solid #37375C;
+            border-radius: 5px;
+            color: #FFFFFF;
+            font-size: 11px;
+            text-align: center;
+            width: 130px;
+            gap: 4px;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            bottom: -7px; /* Adjust this value to position the triangle */
+            left: 25%;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #37375C; /* Same as highlight background color */
+            transform: translateX(-50%);
+        }
+
+        .imag {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+        .short {
+            font-size: 0.7rem;
+            font-weight: 200;
+            opacity: 50%;
+            letter-spacing: 1px;
+        }
+
+        .num {
+            font-size: 0.95rem;
+        }
+        .bld {
+            font-weight: 500;
+            opacity: 85%;
+            font-size: 0.72rem;
+            margin-left: -17px;
+        }
+
+        .list1 {
+            display: flex;
+            gap: 10px;
+            font-size: 0.78rem;
+            gap: 4.5rem;
+        }
+
+        .list1 .bld::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            margin-right: 5px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .upcoming::before {
+            background-color: #5A6ACF;
+        }
+
+        .new-listed::before {
+            background-color: #8593ED;
+        }
+
+        .ongoing::before {
+            background-color: #C7CEFF;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="d-flex">
+        <nav id="sidebar" class="bg-light poppins-regular d-flex flex-column gap-4">
+            <div class="p-3 d-flex align-items-center gap-2 fw-bold flex-row text-head border-bottom px-3">
+                <div class="circle">
+                    <span>BF</span>
+                </div>
+                <span class="mb-0 color-head">Bluestock Fintech</span>
+            </div>
+            <div class="p-1 d-flex flex-column gap-1 px-3">
+                <span class="text-uppercase fw-light head-sub mb-2 px-4">Menu</span>
+                <ul class="list-unstyled text-sm d-flex flex-column align-content-center">
+                    <li>
+                        <div class="div-current-opacity">
+                            <a href="./index.html" class="text-decoration-none d-flex gap-2 p-2 px-4 align-items-center">
+                                <i class="fa-solid fa-square-poll-vertical icon-current" aria-hidden="true"></i> 
+                                <span class="color-current">Dashboard</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="./upcomingIPO.html" class="text-decoration-none color-link d-flex gap-2 p-2 px-4 align-items-center left-shift">
+                            <i class="fa-solid fa-cart-shopping icon-color" aria-hidden="true"></i>
+                            <span>Manage IPO</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-decoration-none color-link d-flex gap-2 p-2 px-4 align-items-center">
+                            <i class="fas fa-file-alt icon-color" aria-hidden="true"></i>
+                            <span>IPO Subscription</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-decoration-none color-link d-flex gap-2 p-2 px-4 align-items-center left-shift">
+                            <i class="fa-solid fa-comment-dots icon-color" aria-hidden="true"></i>
+                            <span>IPO Allotment</span>
+                        </a>
+                    </li>
+                </ul>
+                <span class="text-uppercase fw-light head-sub mb-2 px-4">Others</span>
+                <ul class="d-flex flex-column text-sm align-content-center list-unstyled">
+                    <li>
+                        <a href="#" class="text-decoration-none color-link d-flex gap-2 p-2 px-4 align-items-center">
+                            <i class="fa-solid fa-gear icon-color" aria-hidden="true"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-decoration-none color-link d-flex gap-2 p-2 px-4 align-items-center">
+                            <i class="fas fa-toolbox icon-color" aria-hidden="true"></i>
+                            <span>API Manager</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-decoration-none color-link d-flex gap-2 p-2 px-4 align-items-center">
+                            <i class="fa-solid fa-user icon-color" aria-hidden="true"></i>
+                            <span>Accounts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-decoration-none color-link d-flex gap-2 p-2 px-4 align-items-center">
+                            <i class="fas fa-question-circle icon-color" aria-hidden="true"></i>
+                            <span>Help</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="content" class="poppins-regular">
+            <div class="d-flex gap-lg-5 p-3 border-bottom">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                    <i class="fa fa-search"></i>
+                </div>
+                <div class="account-info">
+                    <div class="d-flex gap-3">
+                        <div class="avatar">V</div>
+                        <div class="d-flex gap-lg-5">
+                            <div class="name d-flex gap-1 align-items-center">
+                                <span>Hi, </span>
+                                <span>Vishal</span>
+                            </div>
+                            <div class="icon pb-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+                            </div>                            
+                        </div>
+                    </div>
+                    
+                    <div class="notification">
+                        <i class="fa fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                </div>
+            </div>
+            <div class="p-5 d-flex flex-column gap-4">
+                <div class="dash">
+                    <span>Dashboard</span>
+                </div>
+                <div class="d-flex main">
+                    <div class="d-flex flex-column gap-3 div1">
+                        <div>
+                            <span class="head-first">IPO Dashboard India</span>
+                        </div>
+                        <div class="d-flex gap-1 first">
+                            <div class="green d-flex align-items-center gap-2">
+                                <i class="fa-solid fa-arrow-up"></i>
+                                <span class="text-green">20</span>
+                            </div>
+                            <span>IPO in Gain</span>
+                        </div>
+                        <div class="circle-container">
+                            <div class="circle-s circle1">
+                                <div class="content d-flex flex-column">
+                                    <span class="span-s">9</span>
+                                    <span>IPO in Loss</span>
+                                </div>
+                                <div class="half-border"></div>
+                            </div>
+                            <div class="circle-s circle2">
+                                <div class="content d-flex flex-column">
+                                    <span class="span-s">30</span>
+                                    <span>Total IPO</span>
+                                </div>
+                                <div class="half-border"></div>
+                            </div>
+                            <div class="circle-s circle3">
+                                <div class="content d-flex flex-column">
+                                    <span class="span-s">20</span>
+                                    <span>IPO in Gain</span>
+                                </div>
+                                <div class="half-border"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column gap-3 div2">
+                        <div class="logo-div">
+                            <span class="head-first">Quick Links</span>
+                        </div>
+                        <div class="d-flex flex-column gap-5 first">
+                            <div class="first logo-div">
+                                <span>Adipiscing elit, sed do eiusmod tempor</span>
+                            </div>
+                            <div class="d-flex flex-column gap-1">
+                                <div class="second1 d-flex align-items-center">
+                                    <div class="d-flex gap-1 align-items-center">
+                                        <img src="./assets/Group299.png" class="logo" alt="">
+                                        <span class="first span-d fw-bold">NSE India</span>
+                                    </div>
+                                    <span class="first span-d">Visit Now</span>
+                                </div>
+                                <div class="second2 d-flex align-items-center">
+                                    <div class="d-flex gap-1 align-items-center">
+                                        <img src="./assets/Group302.png" class="logo" alt="">
+                                        <span class="first small span-d fw-bold">BSE India</span>
+                                    </div>
+                                    <span class="first span-d">Visit Now</span>
+                                </div>
+                                <div class="second3 d-flex align-items-center">
+                                    <div class="d-flex gap-1 align-items-center">
+                                        <img src="./assets/Group301.png" class="logo" alt="">
+                                        <span class="first span-d fw-bold">SEBI</span>
+                                    </div>
+                                    <span class="first span-d">Visit Now</span>
+                                </div>
+                                <div class="second4 d-flex align-items-center">
+                                    <div class="d-flex gap-1 align-items-center">
+                                        <img src="./assets/Group300.png" class="logo" alt="">
+                                        <span class="first span-d fw-bold">Money Control</span>
+                                    </div>
+                                    <span class="first span-d">Visit Now</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <div class="d-flex second1">
+                            <div class="d-flex flex-column gap-2">
+                                <div class="logo-div">
+                                    <span class="head-first">Main Board IPO</span>
+                                </div>
+                                <div class="d-flex flex-column gap-5 first">
+                                    <div class="first logo-div">
+                                        <span>From 01 Jan 2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="button">View Report</button>
+                        </div>
+                        <div class="d-flex flex-column align-items-center mt-5 gap-4">
+                            <div class="contain">
+                                <img class="imag" src="./assets/Chart.png" alt="">
+                                <div class="highlight d-flex flex-column align-items-start">
+                                    <span>Afternoon</span>
+                                    <span class="short">IPO NSE & BSE</span>
+                                    <span class="num">15</span>
+                                </div>
+                            </div>
+                            <div class="d-flex list1">
+                                <div class="d-flex flex-column gap-1">
+                                    <span class="bld upcoming">Upcoming</span>
+                                    <span>15</span>
+                                </div>
+                                <div class="d-flex flex-column gap-1">
+                                    <span class="bld new-listed">New Listed</span>
+                                    <span>25</span>
+                                </div>
+                                <div class="d-flex flex-column gap-1">
+                                    <span class="bld ongoing">Ongoing</span>
+                                    <span>2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
