@@ -1,0 +1,184 @@
+body {
+  background-color: #ffffff;
+}
+
+.logo {
+  width: 85px;
+}
+
+nav {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 10px 0;
+  box-shadow: 10px 10px 5px #00000005;
+}
+
+nav .logo-container {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+nav .logo-container h1 {
+  font-size: 30px;
+  color: #000000;
+  font-weight: 700;
+  margin: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 25px;
+}
+
+nav ul li a {
+  color: #9A9A9A;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 13px;
+  height: 35px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+nav ul li a:hover {
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #3F52FF;
+}
+
+.nav-login {
+  display: flex;
+  align-items: center;
+}
+
+.signup {
+  background-color: #3F52FF;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 153px;
+  height: 42px;
+  text-align: center;
+  margin-left: 15px;
+}
+
+.login {
+  color: #9A9A9A;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 5px 10px;
+  height: 35px;
+  text-align: center;
+}
+
+.heavy-arrow {
+  color: #9A9A9A;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.container1 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.container1 .madeto {
+  font-size: 96px;
+  font-weight: 600;
+  color: #7059EBE5;
+}
+
+.container1 .trade {
+  font-size: 96px;
+  font-weight: 600;
+  color: #2AB479;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.custom-spacing {
+  margin-right: 50px;
+}
+
+span {
+  color: #000000;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.button-1 .btn-container {
+  margin-top: 20px;
+  margin-right: 50px;
+  width: 300px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+
+
+.custom-btn {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 600;
+  font-size: 21px;
+  text-decoration: none;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.location-arrow {
+  width: 20px;
+  margin-left: 10px;
+}
+
+.custom-container {
+  padding: 50px;
+  border-radius: 10px;
+  margin-top: 20px;
+  height: 490px;
+}
+
+
+
+.custom-column {
+  margin-left: 100px;
+  margin-top: 50px;
+}
+
+.custom-column div {
+  margin-bottom: 30px;
+}
+
+.custom-h {
+  font-size: 23px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.custom-p {
+  font-size: 15px;
+  font-weight: 400;
+  color: #000000;
+}
+
+.mainimg {
+  margin-top: 70px;
+
+}
