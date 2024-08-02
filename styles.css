@@ -1,0 +1,552 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.body-container{
+    width: 1920px;
+    height: 12151px;
+    gap: 10px;
+    opacity: 0px;
+    align-items: center;
+    
+
+}
+.navbar-width{
+    width: 1920px;
+    height: 124px;
+    gap: 0px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    text-align: center;
+
+}
+
+.navbar {
+    background-color: #333;
+    padding: 10px;
+    font-size: 18px;
+}
+
+
+.navbar-nav {
+    margin: auto;
+}
+
+.nav-item {
+    margin: 20px;
+    font-family: Poppins;
+    font-size: 15px;
+    font-weight: bold;
+    
+
+}
+
+.nav-link {
+    color:  #9A9A9A;
+    ;
+}
+
+.nav-link:hover {
+    color: #ccc;
+}
+
+.dropdown-menu {
+    background-color: #333;
+    border: none;
+    padding: 10px;
+}
+
+.dropdown-item {
+    color: #fff;
+}
+
+.dropdown-item:hover {
+    color: #ccc;
+    background-color: #444;
+}
+.menu-button{
+    width: 25px;
+    height: 25px;
+    margin-right: 110px;
+   
+    
+    
+    gap: 0px;
+    opacity: 0px;
+
+}
+
+
+.bluestock-logo {
+    width: 85px;
+    height: 45px;
+    margin-top: 27px;
+    margin-left: 86px;
+    gap: 0px;
+    opacity: 0px;
+    object-fit: contain;
+    
+
+}
+
+.custom-text-btn-primary {
+    background-color: #3F52FF;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.logo-heading {
+    width: 299.68px;
+    height: 68px;
+    margin-top: 27px;
+    margin-left: 25px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Poppins;
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 67.5px;
+    text-align: left;
+}
+.comparision-container{
+    width: 1405px;
+    height: 503px;
+    margin-top: 58px;
+    margin-left: 211px;
+    gap: 0px;
+    opacity: 0px;
+
+}
+
+    
+
+.features-card {
+    background-color: white;
+    width: 253px;
+    height: 500px;
+    margin-top: 0px;
+    
+}
+.features-img {
+    width: 40px;
+    height: 40px;
+}
+.features-card h3{
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 500px;
+    color: #2457C5;
+    margin-left: 10px;
+    
+}
+
+.client-name {
+    font-family: Poppins;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 42px;
+    
+    
+}
+
+.card-container {
+    text-align: center;
+    background-color: white;
+    border-width: 1px;
+    border-radius: 16px;
+    box-shadow: 3px 2px 3px 5px rgba(204, 200, 200, 0.2);
+    width: 379px;
+    height: 462px;
+    margin-top: 9px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.vs-container {
+    width: 60px;
+    height: 60px;
+    margin-top: 260px;
+    background-color: black;
+    border-radius: 60%;
+
+    margin-left: 110px;   
+}
+.vs-container h1{
+    color: white;
+    font-family: Poppins;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 18px;
+}
+
+.client-logo {
+    width: 123px;
+    height: 123px;
+}
+.star-rating{
+    width: 164.84px;
+    height: 27px;
+}
+.demat-button {
+
+    height: 57px;
+    padding: 15px 26px 15px 26px;
+    color: white;
+    background-color: #45BBBC;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: none;
+
+}
+.active-clients-graph{
+    width: 1016px;
+    height: 925px;
+    margin-top: 120px;
+    margin-left: 454px;
+}
+    
+
+.graph-container {
+    width: 100%;
+    max-width: 1016px;
+    height: 804px;
+    max-height: 925px;
+   
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+    align-items: center;
+    
+
+}
+
+.sub-heading {
+
+    text-align: left;
+    font-size: 38px;
+    font-family: poppins;
+    font-weight: 600;
+}
+.plugins{
+    padding: 10px;
+    margin-right: 10px;
+    text-align: center;
+}
+.plugins h3{
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    margin: 10px;
+
+
+}
+.table-1{
+    width: 1018px;
+    height: 411px;
+    margin-top: 92px;
+    margin-left: 454px;
+    gap: 0px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    text-align: center;
+
+}
+.table-2{
+    width: 1018px;
+    height: 750px;
+    margin-top: 100px;
+    margin-left: 452px;
+    gap: 0px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    
+}
+.table-styling {
+    font-family: poppins;
+    width: 100%;
+    width: 1012px;
+    margin-top: 25px;
+    left: 458px;
+    gap: 0px;
+    opacity: 0px;
+    height: 100%;
+
+
+}
+
+.table-styling th {
+    background-color: #2457C5;
+    color: white;
+    border: none;
+    padding: 30px;
+    font-family: Poppins;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 40.5px;
+    text-align: left;
+  
+
+}
+
+.table-styling td {
+    padding: 30px;
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 40.5px;
+    text-align: left;
+    border: 1px solid black;
+}
+
+.charge-comparision{
+    width: 1018px;
+    height: 993.01px;
+    margin-top: 100px;
+    margin-left: 454px;
+    gap: 0px;
+    opacity: 0px;
+}
+.box-container{
+    margin-top: 38px;
+    margin-bottom: 115px;
+}
+.box-container h4{
+    margin-top: 130px;
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+
+}
+.complaints-graph{
+    width: 1016px;
+    height: 945px;
+    margin-top: 135px;
+    margin-left: 454px;
+
+}
+.share-holding-graph{
+    width: 1016px;
+    height: 1742px;
+    margin-top: 142px;
+    margin-left: 454px;
+    gap: 0px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+
+}
+.angelone-share{
+    width: 1016px;
+    height: 893px;
+
+    border-radius: 49px 0px 0px 0px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    text-align: center;
+}
+.chart-container{
+    width: 100%;
+    max-width: 1016px;
+    height: 800px;
+    font-family: Poppins;
+    font-size: 15px;
+    font-weight: 600;
+    
+}
+.zerodha-share{
+    width: 1016px;
+    height: 655px;
+    margin-top: 130px;
+   opacity: 0px;
+    text-align: center;
+}
+.zerodha-chart{
+    width: 100%;
+    max-width: 1016px;
+    height: 650px;
+    font-family: Poppins;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.pros-cons{
+    margin-top: 200px;
+    width: 1018px;
+    height: 1334px;
+    margin-left: 454px;
+    gap: 0px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+}
+
+.pros-table-style {
+    font-family: poppins;
+    width: 100%;
+    width: 1012px;
+    margin-top: 25px;
+    margin-left: 3px;
+    gap: 0px;
+    opacity: 0px;
+    height: 100%;
+}
+
+.pros-table-style th{
+    width: 1012px;
+    height: fit-content;
+    gap: 0px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    font-family: Poppins;
+    font-size: 27px;
+    font-weight: 600;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #2457C5;
+    background-color: #F2E5E5;
+
+}
+.pros-table-style td{
+    width: 1012px;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    border: 1px solid #2457C5;
+
+    gap: 10px;
+    padding: 10px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+
+}
+.header-alignment{
+    margin: auto;
+    color: #2457C5;
+    font-family: Poppins;
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 40.5px;
+   
+
+}
+.zerodha_pros{
+    width: 1012px;
+    height: 810px;
+    margin-top: 100px;
+    gap: 0px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+}
+
+.ratings{
+    width: 1018px;
+    height: 834px;
+    margin-top: 115px;
+    margin-left: 454px;
+    gap: 0px;
+    opacity: 0px;
+
+}
+.ratings-container{
+    width: 1018px;
+    height: 729px;
+    
+   
+    gap: 0px;
+    opacity: 0px;
+
+}
+.rating-card{
+    width: 379px;
+    height: 729px;
+    margin-top: 48px;
+    gap: 0px;
+    opacity: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    border-width: 1px;
+    border-radius: 16px;
+    box-shadow: 3px 2px 3px 5px rgba(204, 200, 200, 0.2);
+
+}
+
+.rating-parameter{
+    color: black;
+    
+    height: 33px;
+    opacity: 0px;
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 33px;
+    margin: 10px;
+
+}
+.rating-images{
+    text-align: end;
+}
+.rating-value{
+    font-family: Poppins;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 90px;
+
+}
+.zerodha-rating-card{
+    margin-left: 250px;
+
+}
+
+.financials-graph{
+    width: 1021px;
+    height: 1092px;
+    margin-top: 140px;
+    margin-left: 454px;
+ 
+    
+}
+    
+
+.financials-graph-container {
+    width: 100%;
+    max-width: 1021px;
+    height: 903px;
+    max-height: 903px;
+}
+.fin_plugins{
+    padding: 10px;
+    margin-right: 10px;
+}
+.fin_plugins h3{
+    font-family: Poppins;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 30px;
+    font-weight: bold;
+
+
+}
+
